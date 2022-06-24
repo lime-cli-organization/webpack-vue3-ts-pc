@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+	<script>
+		// fetch('./README.md').then(r => r.text()).then(r => console.log(r))
+
+		var numberOfLines = function(widths, s) {
+				let arr = new Array(2).fill(0);
+				let lines = 0;
+				let width = 0;
+				for(let i = 0; i < s.length; i++) {
+						const sIndex = s[i].charCodeAt() - 97;
+						width += widths[sIndex];
+						if(width >= 100) {
+								lines++;
+								width = 0;
+						}
+				}
+				arr = [lines, width];
+				return arr;
+		};
+		console.log(numberOfLines([10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10],
+"abcdefghijklmnopqrstuvwxyz"));
+	</script>
+	
+</body>
+</html>
